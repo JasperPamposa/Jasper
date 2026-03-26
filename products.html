@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products - ShoeZone</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Products */
+        .products {
+            padding: 6rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #1a202c;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .section-subtitle {
+            font-size: 1.3rem;
+            color: #718096;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 24px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid #e2e8f0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(135deg, #ff6b6b, #ff5252);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .product-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+        }
+
+        .product-emoji {
+            font-size: 4.5rem;
+            display: block;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #f7fafc, #edf2f7);
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1.5rem;
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(102,126,234,0.2);
+        }
+
+        .product-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #1a202c;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .product-price {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #e53e3e;
+            text-align: center;
+            margin-bottom: 2rem;
+            text-shadow: 0 2px 8px rgba(229, 62, 62, 0.3);
+        }
+
+        .product-button {
+            width: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 1.25rem 2rem;
+            border-radius: 16px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(102,126,234,0.3);
+        }
+
+        .product-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(102,126,234,0.4);
+        }
+
+        .product-button:active {
+            transform: translateY(-1px);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a202c;
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 5rem;
+        }
+
+        .footer-content h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #ffd700;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .products {
+                padding: 3rem 1rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Products -->
+    <section class="products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Products</h2>
+                <p class="section-subtitle">Premium quality shoes for every occasion</p>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-emoji">👟</div>
+                    <h3 class="product-title">Air Max Runner</h3>
+                    <div class="product-price">$89.99</div>
+                    <button class="product-button">🛒 Add to Cart</button>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-emoji">🥾</div>
+                    <h3 class="product-title">Classic Leather Boots</h3>
+                    <div class="product-price">$129.99</div>
+                    <button class="product-button">🛒 Add to Cart</button>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-emoji">👡</div>
+                    <h3 class="product-title">Summer Sandals</h3>
+                    <div class="product-price">$59.99</div>
+                    <button class="product-button">🛒 Add to Cart</button>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-emoji">🏃‍♂️</div>
+                    <h3 class="product-title">Running Pro</h3>
+                    <div class="product-price">$99.99</div>
+                    <button class="product-button">🛒 Add to Cart</button>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-emoji">👞</div>
+                    <h3 class="product-title">Formal Dress Shoes</h3>
+                    <div class="product-price">$149.99</div>
+                    <button class="product-button">🛒 Add to Cart</button>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-emoji">⛸️</div>
+                    <h3 class="product-title">Casual Sneakers</h3>
+                    <div class="product-price">$79.99</div>
+                    <button class="product-button">🛒 Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h3>ShoeZone</h3>
+                <p>&copy; 2024 ShoeZone. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
